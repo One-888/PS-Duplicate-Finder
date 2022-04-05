@@ -5,7 +5,7 @@ $ftype = "*.*"
 # Check file Dup by checking the file size - Setp 2
 $a = gci -Path $src -Filter $ftype -Recurse -File | `
 Where-Object { $_.Length -gt 1mb} | Group-Object -Property Length | `
-Where-Object { $_.Count -gt 1 -and $_.Length -gt 0 } |  Select -ExpandProperty Group |  % {$_.FullName}  
+Where-Object { $_.Count -gt 1 } |  Select -ExpandProperty Group |  % {$_.FullName}  
 
 # Export Directory
 mkdir $dup -ErrorAction SilentlyContinue
