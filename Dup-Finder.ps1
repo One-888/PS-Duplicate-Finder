@@ -3,7 +3,7 @@ $dup = "C:\Dup" # Export File if you want it to export
 
 $ftype = "*.*" 
 # Check file Dup by checking the file size - Setp 2
-$a = gci -Path $src -Filter $ftype -Recurse -File | `
+$a = gci -Path $src -Filter $ftype -Recurse -File -ErrorAction SilentlyContinue  | `
 Where-Object { $_.Length -gt 1mb} | Group-Object -Property Length | `
 Where-Object { $_.Count -gt 1 } |  Select -ExpandProperty Group |  % {$_.FullName}  
 
