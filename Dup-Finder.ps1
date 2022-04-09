@@ -2,7 +2,7 @@ $i = 0
 Write-Progress -Activity "Caluating.." -PercentComplete 5
 
 $src = @("C:\Users") #"F:\All Photos"
-$dup = "C:\Users\VSayakanit\OneDrive - Pittsburgh Water and Sewer Authority\Dup"
+$dup = "C:\Dup"
 
 $ftype = "*.zip" 
 
